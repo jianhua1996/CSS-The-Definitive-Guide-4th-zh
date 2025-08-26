@@ -113,13 +113,11 @@ And above that, the layout of the `body` element is dependent on the layout of t
 
 You can affect the way a user agent displays by setting a value for the property `display`. Now that we’ve taken a close look at visual formatting, let’s consider the `display` property and discuss two more of its values using concepts from earlier in the book.
 
-可以通过设置属性显示的值来影响用户代理的显示方式。现在我们已经仔细研究了可视化格式化，让我们考虑 display 属性，并使用本书前面的概念讨论它的另外两个值。
-
-//
+你现在可以通过设置 display 属性的值来影响用户代理的显示方式。现在我们已经仔细研究了视觉格式化，让我们考虑 display 属性，并使用本书前面的概念讨论它的另外两个值。
 
 We’ll ignore the ruby- and table-related values, since they’re far too complex for this chapter, and we’ll also ignore the value `list-item`, since it’s very similar to block boxes. We’ve spent quite some time discussing block and inline boxes, but let’s spend a moment talking about how altering an element’s display role can alter layout before we look at `inline-block`.
 
-我们将忽略与 ruby 和表相关的值，因为它们对于本章来说太复杂了，我们还将忽略值' list-item '，因为它与块框非常相似。我们已经花了相当多的时间来讨论块和内联框，但是让我们花一点时间来讨论在查看“内联块”之前如何改变元素的显示角色来改变布局。
+我们将忽略与 ruby- 和 table-related 相关的值，因为它们对于本章来说太复杂了，我们还将忽略值 'list-item'，因为它与块盒非常相似。我们已经花了相当多的时间来讨论块和内联框，但在我们查看内联块之前，让我们花点时间讨论如何通过改变元素的显示角色来改变布局。
 
 ### 7.2.1 Changing Roles
 
@@ -205,7 +203,7 @@ There are plenty of other ways to use display to your advantage in design. Be cr
 
 Be careful to note, however, that you are changing the display role of elements—not changing their inherent nature. In other words, causing a paragraph to generate an inline box does `not` turn that paragraph into an inline element. In HTML, for example, some elements are block while others are inline. (Still others are “flow” elements, but we’re ignoring them right now.) An inline element can be a descendant of a block element, but the reverse is generally not true. While a `span` can be placed inside a paragraph, a `span` cannot be wrapped around a paragraph. This will hold true no matter how you style the elements in question. Consider the following markup:
 
-但是要注意，您正在更改元素的显示角色—而不是更改它们的固有性质。换句话说，使一个段落生成内联框并不会将该段落转换为内联元素。例如，在 HTML 中，一些元素是块，而另一些元素是内联的。(还有一些是“流”元素，但是我们现在忽略了它们。)内联元素可以是块元素的后代，但通常不是。虽然 span 可以放在段落中，但 span 不能包裹在段落中。这将适用于无论您如何样式的元素的问题。考虑以下标记:
+然而，请注意，您正在更改元素的显示角色——而不是改变它们的固有性质。换句话说，让一个 p 元素生成内联盒并不会将该元素转换为内联元素。例如，在HTML中，一些元素是块元素，而另一些是内联元素。（还有一些是“流”元素，但我们现在忽略它们。）内联元素可以是块元素的后代，但反过来通常不成立。虽然 span 元素可以放在 p 元素内部，但 span 元素不能包裹 p 元素。无论您如何更改这些元素的样式，这一点都始终不变。看下面的例子：
 
 ```html
 <span style="display: block;">
@@ -215,7 +213,7 @@ Be careful to note, however, that you are changing the display role of elements�
 
 The markup will not validate because the block element (`p`) is nested inside an inline element (`span`). The changing of display roles does nothing to change this. `display` has its name because it affects how the element is displayed, not because it changes what kind of element it is.
 
-由于块元素(`p`)嵌套在内联元素(`span`)中，所以标记将不会生效。改变显示角色并不能改变这一点。`display` 之所以有它的名字，是因为它影响元素的显示方式，而不是因为它改变了元素的类型。
+由于块元素(`p`)嵌套在内联元素(`span`)中，所以标记将不会生效。改变显示角色并不能改变这一点。`display` 之所以是 display，是因为它影响元素的显示方式，而不是因为它改变了元素的类型。
 
 With that said, let’s get into the details of different kinds of boxes: `block boxes`, `inline boxes`, `inline-block boxes`, and `list-item boxes`
 
@@ -244,7 +242,7 @@ It’s also the case that we can alter how these properties are treated using th
 
 This property is how you change what the `width` and `height` values actually do. If you declare `width: 400px` and don’t declare a value for `box-sizing`, then the element’s content box will be 400 pixels wide; any padding, borders, and so on will be added to it. If, on the other hand, you declare `box-sizing: border-box`, then the element box will be 400 pixels from the left outer border edge to the right outer border edge; any border or padding will be placed within that distance, thus shrinking the width of the content area. This is illustrated in Figure 7-5.
 
-此属性用于更改宽度和高度值的实际作用。如果您声明 `width: 400px`，而没有声明 `box-sizing` 值，那么元素的内容框将是 400 像素宽;任何内边距、边框等都将被添加到其中。另一方面，如果您声明 `box-sizing: border-box`，则元素框将从左外边框边缘到右外边框边缘的距离为 400 像素;任何边框或填充将被放置在该距离内，从而缩小内容区域的宽度。如图 7-5 所示。
+这个属性（指 `box-sizing`） 用于更改宽度和高度值的真正作用。如果您声明宽度为 400 像素，但没有声明 box-sizing 的值，那么元素的内容盒将是 400 像素宽；任何内边距、边框等都将添加到盒模型中。相反，如果您声明 `box-sizing: border-box`，那么元素框将从左外边框边缘到右外边框边缘的距离为 400 像素；任何边框或内边距都将放置在该宽度内，从而收缩内容区域的宽度。这如图 7-5 所示。
 
 <div style="margin: 0 auto; width: 70%;">
   <img src='./figures/figure7-5.png'/>
