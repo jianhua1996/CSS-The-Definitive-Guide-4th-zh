@@ -338,7 +338,7 @@ Of these seven properties, only three may be set to `auto`: the width of the ele
 
 If you set `width`, `margin-left`, or `margin-right` to a value of `auto`, and give the remaining two properties specific values, then the property that is set to `auto` is set to the length required to make the element box’s width equal to the parent element’s width. In other words, let’s say the sum of the seven properties must equal 500 pixels, no padding or borders are set, the right margin and width are set to `100px`, and the left margin is set to `auto`. The left margin will thus be 300 pixels wide:
 
-如果将' width '、' margin-left '或' margin-right '设置为' auto '的值，并为其余两个属性指定特定的值，则将设置为' auto '的属性设置为使元素框的宽度等于父元素宽度所需的长度。换句话说，我们假设 7 个属性的总和必须等于 500 像素，没有设置填充或边框，右边框和宽度设置为“100px”，左边框设置为“auto”。因此，左边距将为 300 像素宽:
+如果将 `width`、`margin-left` 或 `margin-right` 设置为 `auto` 的值，并为其余两个属性指定特定的值，则设置为 `auto` 的属性将被设置为使元素框的宽度等于父元素宽度的所需长度（可以理解为自动填充了宽度）。换句话说，我们假设 7 个属性的总和必须等于 500 像素，没有设置 padding 或 border，margin-right 和 width 设置为“100px”，左边框设置为“auto”。因此，左边距将为 300 像素宽:
 
 ```css
 div {
@@ -357,7 +357,7 @@ In a sense, `auto` can be used to make up the difference between everything else
 
 In the case where all three properties are set to something other than `auto`—or, in CSS terminology, when these formatting properties have been `overconstrained`—then `margin-right` is `always` forced to be `auto`. This means that if both margins and the width are set to `100px`, then the user agent will reset the right margin to `auto`. The right margin’s width will then be set according to the rule that one `auto` value “fills in” the distance needed to make the element’s overall width equal that of its containing block. Figure 7-11 shows the result of the following markup:
 
-如果所有三个属性都被设置为“auto”以外的值，或者，用 CSS 术语来说，当这些格式化属性被“过度约束”时，那么“margin-right”总是被强制设置为“auto”。这意味着如果边距和宽度都设置为“100px”，那么用户代理将把右边的边距重置为“auto”。然后，根据“auto”值“填充”使元素的整体宽度等于其包含块的宽度所需的距离的规则来设置右边框的宽度。图 7-11 显示了以下标记的结果:
+如果所有三个属性都被设置为 `auto` 以外的值，或者，用 CSS 术语来说，当这些格式化属性被“过度约束”时，那么 `margin-right` 总是被强制设置为 `auto`。这意味着如果 margin 和 width 都设置为“100px”，那么用户代理将把右边的边距，也就是 margin-right 重置为“auto”。然后，根据“auto”值“填充”使元素的整体宽度等于其包含块的宽度所需的距离的规则来设置右边框的宽度。图 7-11 显示了以下标记的结果:
 
 ```css
 div {
@@ -405,13 +405,13 @@ p {
 
 You might be wondering what happens if `box-sizing` is set to, say, `padding-box`. The discussion here tends to assume that the default of `content-box` is used, but all the same principles described here apply, which is why this section only talked about `width` and the side margins without introducing any padding or borders. The handling of `width: auto` in this section and the following sections is the same regardless of the value of box-sizing. The details of what gets placed where inside the `box-sizing`-defined box may vary, but the treatment of `auto` values does not, because `box-sizing` determines what `width` refers to, not how it behaves in relation to the margins.
 
-您可能想知道如果将“box-sizing”设置为，比如说，“padding-box”会发生什么。这里的讨论倾向于假设使用了默认的“content-box”，但是这里描述的所有原则都适用，这就是为什么本节只讨论“width”和边距，而没有引入任何填充或边框。无论 box-sizing 值是多少，本节和以下各节中对“width: auto”的处理是相同的。在“box-sizing”定义的框中放置内容的详细信息可能会有所不同，但是对“auto”值的处理是不变的，因为“box-sizing”决定了“width”指的是什么，而不是它与边距之间的关系。
+您可能想知道如果将 `box-sizing` 设置为 `padding-box` 会发生什么。这里的讨论倾向于使用了默认的`content-box`，但这里描述的所有原则同样适用，这就是为什么本节只讨论了宽度和边距，而没有引入任何 padding 或 border。本节和以下各节中对“width: auto”的处理是相同的，无论“box-sizing”的值是多少。在“box-sizing”定义的框内放置内容的细节可能会有所不同，但对自动值的处理则不会改变，因为“box-sizing”决定了宽度指的是什么，而不是它相对于边距的行为。
 
 ### 7.2.6 More Than One auto
 
 Now let’s see what happens when two of the three properties (`width`, `margin-left`, and `margin-right`) are set to `auto`. If both margins are set to `auto`, as shown in the following code, then they are set to equal lengths, thus centering the element within its parent. This is illustrated in Figure 7-13.
 
-现在让我们看看当三个属性中的两个(“width”、“margin-left”和“margin-right”)被设置为“auto”时会发生什么。如果两个边距都被设置为“auto”，如下面的代码所示，那么它们被设置为相等的长度，从而使元素处于其父元素的中心。如图 7-13 所示。
+现在让我们看看当三个属性(“width”、“margin-left”和“margin-right”)中的两个被设置为“auto”时会发生什么。如果两个边距都被设置为“auto”，如下面的代码所示，那么它们被设置为相等的长度，从而使元素处于其父元素的中心。如图 7-13 所示。
 
 ```css
 div {
