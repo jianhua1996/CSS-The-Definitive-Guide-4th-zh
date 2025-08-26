@@ -37,19 +37,19 @@ Let’s quickly review the kinds of boxes we’ll be discussing, as well as some
 
 This is the left-to-right, top-to-bottom rendering of text in Western languages and the familiar text layout of traditional HTML documents. Note that the flow direction may be changed in non-Western languages. Most elements are in the normal flow, and the only way for an element to leave the normal flow is to be floated, positioned, or made into a flexible box or grid layout element. Remember, the discussions in this chapter cover only elements in the normal flow.
 
-这是西方语言中从左到右、从上到下的文本呈现，是传统 HTML 文档中常见的文本布局。注意，在非西方语言中，流的方向可能会改变。大多数元素都在常规流中，元素离开常规流的惟一方法是浮动、定位或做成一个弹性盒元素或网格布局元素。请记住，本章的讨论只涉及正常流程中的元素。
+这是西方语言中从左到右、从上到下的文本呈现，是传统HTML文档中常见的文本布局。请注意，在非西方语言中，文本的流向可能会改变。大多数元素都处于常规流中，元素离开常规流的方式只有浮动、定位，或者将其制作成弹性盒或网格布局元素。请记住，本章的讨论仅涉及常规流中的元素。
 
 `Nonreplaced element`
 
 This is an element whose content is contained within the document. For example, a paragraph (`p`) is a nonreplaced element because its textual content is found within the element itself.
 
-这个元素的内容包含在文档中。例如，段落(p)是不可替换的元素，因为它的文本内容是在元素本身中找到的。
+这是一个其内容包含在文档中的元素。例如，一个段落（`p`）是一个非替换元素，因为其文本内容位于元素内部。
 
 `Replaced element`
 
 This is an element that serves as a placeholder for something else. The classic example of a replaced element is the `img` element, which simply points to an image file that is inserted into the document’s flow at the point where the `img` element itself is found. Most form elements are also replaced (e.g., `<input type="radio">`).
 
-这是一个元素，用作其他内容的占位符。被替换元素的典型示例是 img 元素，它简单地指向一个图像文件，该文件被插入到文档流中找到 img 元素本身的地方。大多数表单元素也被替换（例如 `<input type="radio">`）
+这是一个作为其他事物占位符的元素。替换元素的典型例子是`img`元素，它简单地指向插入到文档流中的图像文件，该文件位于`img`元素本身所在的位置。大多数表单元素也是替换元素（例如，`<input type="radio">`)。
 
 `Root element`
 
@@ -61,19 +61,19 @@ This is the element at the top of the document tree. In HTML documents, this is 
 
 This is a box that an element such as a paragraph, heading, or `div` generates. These boxes generate “new lines” both before and after their boxes when in the normal flow so that block boxes in the normal flow stack vertically, one after another. Any element can be made to generate a block box by declaring `display: block`.
 
-这是一个由段落、标题或 div 等元素生成的框。在正常流中，这些框会在它们的框之前和之后生成“新行”，以便垂直地一个接一个地阻塞正常流堆栈中的框。任何元素都可以通过声明 `display: block` 来生成一个块框。
+这是一个由p标签、h标签或`div`等元素生成的框。当这些框处于正常流程中时，它们会在框的上下生成“新行”，所以，块级框会在正常流中垂直堆叠，一个接着一个。任何元素都可以通过声明`display: block`来使其生成块级框。
 
 `Inline box`
 
 This is a box that an element such as `strong` or `span` generates. These boxes do not generate “line breaks” before or after themselves. Any element can be made to generate an inline box by declaring `display: inline`.
 
-这是一个由诸如 strong 或 span 之类的元素生成的方框。这些框不会在它们自己之前或之后生成“换行符”。任何元素都可以通过声明 `display: inline` 来生成内联框。
+这是一个由诸如`strong`或`span`等元素生成的框。这些框在自身前后不会生成“换行”。任何元素都可以通过声明`display: inline`来使其生成内联框。
 
 `Inline-block box`
 
 This is a box that is like a block box internally, but acts like an inline box externally. It acts similar to, but not quite the same as, a replaced element. Imagine picking up a `div` and sticking it into a line of text as if it were an inline image, and you’ve got the idea.
 
-这是一个内部类似于块盒，但在外部充当内联盒的盒子。它的作用与被替换的元素类似，但又不完全相同。想象一下，拿起一个 div，把它插入到一行文本中，就好像它是一个内联图像一样，你就明白了。
+这是一个内部像块盒，但外部像行盒的盒子。它的行为类似于一个替换元素，但又不完全相同。想象一下，你拿起一个`div`，就像把它当作内联图片一样，插入到一行文本中，你就明白了。
 
 There are several other types of boxes, such as table-cell boxes, but they won’t be covered in this book for a variety of reasons—not the least of which is that their complexity demands a book of its own, and very few authors will actually wrestle with them on a regular basis.
 
